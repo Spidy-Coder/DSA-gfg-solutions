@@ -1,0 +1,48 @@
+#include<iostream>
+using namespace std;
+
+int insert(int arr[],int n,int x,int pos,int cap){
+
+    if(n == cap){
+        return n;
+    }
+    int idx;
+    idx=pos-1;
+    for(int i=n-1;i>=idx;i--){
+        arr[i+1] = arr[i];
+    } //{2,4,5}  {2,1,4,5}
+    arr[idx] = x;
+    return(n+1);
+
+}
+
+//driver code
+int main(){
+
+
+       int arr[5], cap = 5, n = 3;
+
+       arr[0] = 5; arr[1] = 10; arr[2] = 20;
+
+       cout<<"Before Insertion"<<endl;
+
+       for(int i=0; i < n; i++)
+       {
+       	cout<<arr[i]<<" ";
+       }
+
+       cout<<endl;
+
+       int x = 7, pos = 2;
+
+       n = insert(arr, n, x, pos, cap);
+
+       cout<<"After Insertion"<<endl;
+
+       for(int i=0; i < n; i++)
+       {
+       		cout<<arr[i]<<" ";
+       }
+    
+
+}
