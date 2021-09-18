@@ -5,4 +5,4 @@ This repository will contain <a href="https://www.geeksforgeeks.org/">GeeksForGe
 
 This repository will get updated daily or weekly, and new solutions will getting be merged.
 
-Hope you find this content useful :)
+Hope you find it useful :)
