@@ -1,26 +1,25 @@
-        queue<TreeNode*>q;
-        vector<vector<int>>ans;
-        vector<int>v;
-        if(root==NULL)
-            return {};
-        q.push(root);
-        q.push(NULL);
-        while(!q.empty() && q.front()!=NULL){
-            TreeNode*node=q.front();
+        class Solution
+{
+    public:
+    //Function to return the level order traversal of a tree
+    vector<int> levelOrder(Node* node)
+    {
+        
+        vector<int> v;
+        queue<Node *>q;
+        q.push(node);
+        while(q.empty() == false){
+            Node *curr = q.front();
             q.pop();
-            v.push_back(node->val);
-           
-            if(node->left!=NULL)
-                q.push(node->left);
-            
-            if(node->right!=NULL)
-                q.push(node->right);
-            if(q.front()==NULL){
-                 ans.push_back(v);
-                v.clear();
-                q.pop();
-                q.push(NULL);
+            v.push_back(curr->data);
+            if(curr->left != NULL){
+                q.push(curr->left);
+            }
+            if(curr->right != NULL){
+                q.push(curr->right);
             }
         }
         
-        return ans;
+        return v;
+    }
+};
